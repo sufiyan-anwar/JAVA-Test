@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                ./mvnw -Dmaven.test.failure.ignore=true clean package
+                mvn clean package
             }
         }
         stage('Test') {
