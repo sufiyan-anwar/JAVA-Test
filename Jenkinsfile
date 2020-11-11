@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('SCM Checkoout') {
+        stage('Build') {
             steps {
-                sh 'mvn clean package'
+                sh "./mvnw -Dmaven.test.failure.ignore=true clean package"
             }
         }
         stage('Test') {
